@@ -93,13 +93,16 @@
                         A dedicated professional committed to delivering high-quality, scalable solutions that exceed
                         client expectations.
                     </p>
-                    <button class="btn-rounded btn btn-outline-primary mt-4"
-                        onclick="window.location.href='assets/cv/CV - Usman Shahbaz.pdf';">Download CV</button>
+                    <button class="btn-rounded btn btn-outline-primary mt-4" 
+                    onclick="onDownloadCV()" >Download CV</button>
+                    <!-- onclick="window.location.href='assets/files/CV - Usman Shahbaz.pdf';">Download CV</button> -->
                 </div>
-            </div><!-- end of about wrapper -->
-        </div><!-- end of container -->
-    </section> <!-- end of about section -->
-
+            </div>
+            <!-- end of about wrapper -->
+        </div>
+        <!-- end of container -->
+    </section>
+    <!-- end of about section -->
 
 
 
@@ -138,7 +141,23 @@
     <script>
         function onVisitMyWorkClick() {
             var href = 'https://www.github.com/Dr-Usman';
-            window.open(href, '_blank'); // New Tap 
+            window.open(href, '_blank'); // New Tab
+            // window.location.href = href; // Same Tab
+        }
+    </script>
+
+    <!-- Download My CV -->
+    <script>
+        function onDownloadCV() {
+            // Replace 'YOUR_FILE_ID' with the actual file ID from your Google Drive URL
+            var fileId = '1_mQz1uKgNn63U8N4McLOlpAw2T35r7pd';
+
+            // Construct the direct download link
+            var downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+            var href = downloadUrl;
+
+            window.open(href, '_blank'); // New Tab
             // window.location.href = href; // Same Tab
         }
     </script>
