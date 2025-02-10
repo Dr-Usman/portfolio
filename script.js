@@ -90,6 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize slider
     updateSlider();
 
+    // Project image slider
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const images = card.querySelectorAll('.project-images img');
+        const prevBtn = card.querySelector('.img-prev');
+        const nextBtn = card.querySelector('.img-next');
+        let currentImg = 0;
+
+        function updateImages() {
+            images.forEach(img => img.classList.remove('active'));
+            images[currentImg].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentImg = (currentImg - 1 + images.length) % images.length;
+            updateImages();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImg = (currentImg + 1) % images.length;
+            updateImages();
+        });
+
+        // Initialize images
+        updateImages();
+    });
+
     // Scroll reveal animations
     const revealElements = document.querySelectorAll('section');
     
