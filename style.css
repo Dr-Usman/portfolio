@@ -299,6 +299,19 @@ section {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1.5rem;
+    background: #f0f0f0;
+}
+
+.service-card:nth-child(1) .service-image {
+    background: url('https://placehold.co/600x400/2196F3/white?text=Mobile+Apps') center/cover;
+}
+
+.service-card:nth-child(2) .service-image {
+    background: url('https://placehold.co/600x400/1976D2/white?text=Web+Apps') center/cover;
+}
+
+.service-card:nth-child(3) .service-image {
+    background: url('https://placehold.co/600x400/0D47A1/white?text=Desktop+Apps') center/cover;
 }
 
 .tech-list span i {
@@ -351,10 +364,11 @@ section {
 
 .project-slider {
     position: relative;
-    overflow: visible;
-    margin: 4rem auto;
-    max-width: 1000px;
-    height: 500px;
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 90%;
+    height: auto;
+    padding: 2rem 0;
 }
 
 .project-slide {
