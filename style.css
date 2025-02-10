@@ -9,10 +9,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
 }
 
 header {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -33,6 +35,20 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2196F3;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #2196F3;
+    transition: 0.3s;
 }
 
 .nav-links {
@@ -63,13 +79,30 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: url('https://source.unsplash.com/random/1920x1080/?code,technology') center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #2196F3;
+    color: #fff;
 }
 
 .cta-button {
@@ -94,47 +127,116 @@ section {
     margin-top: 2rem;
 }
 
-.skills ul {
-    list-style: none;
-    margin-top: 1rem;
-}
-
-.skills li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.skills li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: #2196F3;
-}
-
-.project-grid {
+.tech-icons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tech-icons div {
+    text-align: center;
+}
+
+.tech-icons i {
+    font-size: 2.5rem;
+    color: #2196F3;
+    margin-bottom: 0.5rem;
+}
+
+.tech-icons span {
+    font-size: 0.9rem;
+    display: block;
+}
+
+.download-cv {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.download-cv:hover {
+    background: #1976D2;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.project-card {
+.service-card {
     background: white;
     padding: 2rem;
     border-radius: 10px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
 
-.project-card:hover {
+.service-card:hover {
     transform: translateY(-5px);
 }
 
-.tech-stack {
+.service-card i {
+    font-size: 3rem;
+    color: #2196F3;
+    margin-bottom: 1rem;
+}
+
+.project-slider {
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.project-slide {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.project-slide img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: inline-block;
     margin-top: 1rem;
-    color: #666;
-    font-size: 0.9rem;
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.prev-btn, .next-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #1976D2;
 }
 
 .contact-content {
@@ -163,7 +265,7 @@ section {
 footer {
     text-align: center;
     padding: 2rem;
-    background: #f5f5f5;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 h2 {
@@ -173,8 +275,24 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    .nav-links.active {
+        display: flex;
     }
     
     .hero-content h1 {

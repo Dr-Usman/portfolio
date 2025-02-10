@@ -12,9 +12,15 @@
     <header>
         <nav>
             <div class="logo">John Doe</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -33,41 +39,75 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div class="skills">
-                <h3>Skills</h3>
-                <ul>
-                    <li>Flutter & Dart</li>
-                    <li>Firebase</li>
-                    <li>RESTful APIs</li>
-                    <li>State Management</li>
-                    <li>Git & Version Control</li>
-                    <li>CI/CD</li>
-                </ul>
+                <h3>Tech Stack</h3>
+                <div class="tech-icons">
+                    <div><i class="fab fa-flutter"></i><span>Flutter</span></div>
+                    <div><i class="fab fa-android"></i><span>Android</span></div>
+                    <div><i class="fab fa-apple"></i><span>iOS</span></div>
+                    <div><i class="fas fa-fire"></i><span>Firebase</span></div>
+                    <div><i class="fab fa-git-alt"></i><span>Git</span></div>
+                    <div><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div><i class="fab fa-react"></i><span>React</span></div>
+                    <div><i class="fab fa-node"></i><span>Node.js</span></div>
+                </div>
             </div>
             <div class="experience">
                 <h3>Experience</h3>
                 <p>5+ years of experience in developing mobile applications using Flutter. Specialized in creating performant, beautiful, and user-friendly applications for both iOS and Android platforms.</p>
+                <a href="assets/cv.pdf" class="download-cv" download><i class="fas fa-download"></i> Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Apps</h3>
+                <p>Native and cross-platform mobile applications for iOS and Android using Flutter</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3>Web Apps</h3>
+                <p>Responsive and progressive web applications with modern frameworks</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>Desktop Apps</h3>
+                <p>Cross-platform desktop applications using Flutter and Electron</p>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
         <h2>Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
+        <div class="project-slider">
+            <div class="project-slide">
+                <img src="https://via.placeholder.com/400x200" alt="E-Commerce App">
                 <h3>E-Commerce App</h3>
                 <p>A full-featured shopping app with payment integration</p>
                 <div class="tech-stack">Flutter • Firebase • Stripe</div>
+                <a href="https://github.com/username/ecommerce" class="project-link"><i class="fab fa-github"></i> View Project</a>
             </div>
-            <div class="project-card">
+            <div class="project-slide">
+                <img src="https://via.placeholder.com/400x200" alt="Social Media App">
                 <h3>Social Media App</h3>
                 <p>Real-time messaging and content sharing platform</p>
                 <div class="tech-stack">Flutter • WebSocket • MongoDB</div>
+                <a href="https://github.com/username/social" class="project-link"><i class="fab fa-github"></i> View Project</a>
             </div>
-            <div class="project-card">
+            <div class="project-slide">
+                <img src="https://via.placeholder.com/400x200" alt="Fitness Tracker">
                 <h3>Fitness Tracker</h3>
                 <p>Health monitoring app with workout plans</p>
                 <div class="tech-stack">Flutter • HealthKit • Google Fit</div>
+                <a href="https://github.com/username/fitness" class="project-link"><i class="fab fa-github"></i> View Project</a>
             </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
