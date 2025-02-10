@@ -1,16 +1,91 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Developer Portfolio</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+    <header>
+        <nav>
+            <div class="logo">John Doe</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Flutter Developer</h1>
+            <p>Building beautiful cross-platform applications</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Flutter & Dart</li>
+                    <li>Firebase</li>
+                    <li>RESTful APIs</li>
+                    <li>State Management</li>
+                    <li>Git & Version Control</li>
+                    <li>CI/CD</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>Experience</h3>
+                <p>5+ years of experience in developing mobile applications using Flutter. Specialized in creating performant, beautiful, and user-friendly applications for both iOS and Android platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-Commerce App</h3>
+                <p>A full-featured shopping app with payment integration</p>
+                <div class="tech-stack">Flutter • Firebase • Stripe</div>
+            </div>
+            <div class="project-card">
+                <h3>Social Media App</h3>
+                <p>Real-time messaging and content sharing platform</p>
+                <div class="tech-stack">Flutter • WebSocket • MongoDB</div>
+            </div>
+            <div class="project-card">
+                <h3>Fitness Tracker</h3>
+                <p>Health monitoring app with workout plans</p>
+                <div class="tech-stack">Flutter • HealthKit • Google Fit</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> your.email@example.com</a>
+                <a href="https://github.com/yourusername"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Flutter Developer Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
