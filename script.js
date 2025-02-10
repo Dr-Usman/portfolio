@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Typing animation
-    const titles = ['Flutter Developer', 'Software Engineer', 'Mobile App Developer'];
+    const titles = ['Flutter Developer', 'Software Engineer', 'Mobile App Architect', 'Cross-Platform Expert', 'UI/UX Specialist'];
     let titleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
