@@ -79,8 +79,9 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('https://source.unsplash.com/random/1920x1080/?code,technology') center/cover;
+    background: url('https://images.unsplash.com/photo-1551650975-87deedd944c3') center/cover;
     position: relative;
+    margin-top: -80px;
 }
 
 .hero::before {
@@ -203,6 +204,15 @@ section {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin: 0 1rem;
     text-align: center;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    width: calc(100% - 2rem);
+    opacity: 0;
+}
+
+.project-slide.active {
+    opacity: 1;
+    position: relative;
 }
 
 .project-slide img {

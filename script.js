@@ -1,5 +1,36 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Typing animation
+    const titles = ['Flutter Developer', 'Software Engineer', 'Mobile App Developer'];
+    let titleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const pauseEnd = 2000;
+
+    function typeText() {
+        const titleElement = document.querySelector('.typing-text');
+        const currentTitle = titles[titleIndex];
+        
+        if (isDeleting) {
+            titleElement.textContent = currentTitle.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            titleElement.textContent = currentTitle.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentTitle.length) {
+            setTimeout(() => isDeleting = true, pauseEnd);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
+        }
+
+        setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
+    }
+    typeText();
     // Hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -39,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateSlider() {
         slides.forEach((slide, index) => {
-            slide.style.display = index === currentSlide ? 'block' : 'none';
+            slide.classList.remove('active');
+            if (index === currentSlide) {
+                slide.classList.add('active');
+            }
         });
     }
 
