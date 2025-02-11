@@ -167,23 +167,10 @@ section {
     padding-left: 40px;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #2196F3;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    top: 30px;
-}
-
-.timeline-item:nth-child(odd)::before {
-    right: -8px;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -8px;
+.timeline-content {
+    border: 1px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #2196F3, #1976D2) border-box;
 }
 
 .timeline-content {
@@ -245,17 +232,36 @@ section {
 
 .tech-icons div {
     text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.tech-icons div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(33, 150, 243, 0.15);
+    border-color: rgba(33, 150, 243, 0.3);
 }
 
 .tech-icons i {
     font-size: 2.5rem;
     color: #2196F3;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons div:hover i {
+    transform: scale(1.1);
+    color: #1976D2;
 }
 
 .tech-icons span {
     font-size: 0.9rem;
     display: block;
+    color: #444;
+    font-weight: 500;
 }
 
 .download-cv {
@@ -389,16 +395,32 @@ section {
 }
 
 .about-text {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(33, 150, 243, 0.15);
     margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, transparent, rgba(33, 150, 243, 0.1));
+    border-radius: 0 15px 0 100%;
 }
 
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     line-height: 1.8;
+    color: #444;
 }
 
 .tech-icons i.fa-flutter::before {
