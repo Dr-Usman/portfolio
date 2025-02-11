@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Project slider
     const slider = document.querySelector('.project-slider');
     const slides = document.querySelectorAll('.project-slide');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
     let currentSlide = 0;
 
     function updateSlider() {
