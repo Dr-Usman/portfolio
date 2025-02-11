@@ -67,28 +67,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.prev-arrow');
     const nextBtn = document.querySelector('.next-arrow');
     let currentSlide = 0;
+    let autoScrollInterval;
 
     function updateSlider() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            if (index === currentSlide) {
-                slide.classList.add('active');
-            }
+        const offset = currentSlide * -100;
+        slider.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % Math.ceil(slides.length / 2);
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + Math.ceil(slides.length / 2)) % Math.ceil(slides.length / 2);
+        updateSlider();
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
         });
     }
 
-    prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlider();
-    });
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(nextSlide, 5000);
+    }
 
-    nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    });
+    function resetAutoScroll() {
+        clearInterval(autoScrollInterval);
+        startAutoScroll();
+    }
 
-    // Initialize slider
+    // Initialize slider and auto-scroll
     updateSlider();
+    startAutoScroll();
 
     // Project image slider
     const projectCards = document.querySelectorAll('.project-card');

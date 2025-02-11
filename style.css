@@ -137,9 +137,17 @@ section {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
+    width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #2196F3, transparent);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        #2196F3 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -455,15 +463,25 @@ section {
 }
 
 .project-slider {
-    display: flex;
-    overflow: hidden;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .project-slide {
-    min-width: 100%;
+    min-width: calc(50% - 1rem);
     transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .project-slider {
+        grid-template-columns: 1fr;
+    }
+    .project-slide {
+        min-width: 100%;
+    }
 }
 
 .project-card {
