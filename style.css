@@ -126,29 +126,92 @@ section {
 }
 
 .timeline {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #2196F3, transparent);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+}
+
 .timeline-item {
     position: relative;
-    background: white;
-    padding: 2px;
-    border-radius: 15px;
-    background: linear-gradient(45deg, #2196F3, #1976D2);
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #2196F3;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: 30px;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -8px;
 }
 
 .timeline-content {
     background: white;
     padding: 25px;
     border-radius: 13px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: transform 0.3s;
-    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+    }
+    
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    
+    .timeline-item::before {
+        left: 12px !important;
+    }
 }
 
 .timeline-item:hover .timeline-content {
@@ -343,11 +406,47 @@ section {
     font-family: "Font Awesome 6 Brands";
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.project-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.slider-arrow {
+    background: #2196F3;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.slider-arrow:hover {
+    background: #1976D2;
+}
+
+.project-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
     padding: 1rem;
+}
+
+.project-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.project-card {
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 .project-card {
