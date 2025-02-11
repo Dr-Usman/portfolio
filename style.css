@@ -295,6 +295,62 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
+Updated Portfolio CSS
+
+/* Add these styles to style.css */
+.service-card {
+    background: white;
+    padding: 0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.service-image {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    margin-top: 1.5rem;
+    color: #2196F3;
+}
+
+.service-card p {
+    padding: 1rem 2rem;
+    color: #666;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Service card specific images */
+.service-card:nth-child(1) .service-image {
+    background-image: url('https://placehold.co/600x400/2196F3/white?text=Mobile+Apps');
+}
+
+.service-card:nth-child(2) .service-image {
+    background-image: url('https://placehold.co/600x400/1976D2/white?text=Web+Apps');
+}
+
+.service-card:nth-child(3) .service-image {
+    background-image: url('https://placehold.co/600x400/0D47A1/white?text=Desktop+Apps');
+}
+
+.tech-list {
+    padding: 1rem 2rem 2rem;
+}
 
 .service-card:hover {
     transform: translateY(-5px);
