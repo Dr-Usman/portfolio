@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter Developer Portfolio</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header and Navigation Section -->
     <header>
         <nav>
+            <!-- Logo and Brand Name -->
             <div class="logo">Usman Shahbaz</div>
+
+            <!-- Hamburger Menu for Mobile View -->
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+
+            <!-- Navigation Links -->
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -29,18 +36,24 @@
         </nav>
     </header>
 
+    <!-- Hero Section - Main Introduction -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="typing-text">Flutter Developer</h1>
-            <p class="subtitle">Crafting Innovative Digital Experiences | Mobile & Cross-Platform Expert | UI/UX
-                Enthusiast</p>
+            <p class="subtitle">
+                Crafting Innovative Digital Experiences |
+                Mobile & Cross-Platform Expert |
+                UI/UX Enthusiast
+            </p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
+    <!-- About Me Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
+            <!-- About Text Section -->
             <div class="about-text">
                 <h3>🧑‍💻 Who I Am</h3>
                 <p>
@@ -64,91 +77,104 @@
                     maintainable, performance-optimized code with a user-first approach.
                 </p>
 
-
-
-                <a href="assets/Resume-Usman Shahbaz-Flutter.pdf" target="_blank" class="download-cv" download><i
-                        class="fas fa-file-download"></i> Download CV</a>
+                <!-- Download CV Button -->
+                <a href="assets/Resume-Usman Shahbaz-Flutter.pdf" target="_blank" class="download-cv" download>
+                    <i class="fas fa-file-download"></i> Download CV
+                </a>
             </div>
-            <div class="skills">
 
+            <!-- Skills and Tech Stack Section -->
+            <div class="skills">
                 <h3>Tech Stack</h3>
                 <div class="tech-icons">
-                    <!-- <div><i class="fa-brands fa-flutter"></i>
-<span>Flutter</span></div> -->
-                    <div><img src="assets/flutter-logo.png" alt="Flutter"
-                            style="width: 35px; height: 40px;"><span>Flutter</span></div>
-                    <div><i class="fab fa-android"></i><span>Android</span></div>
-                    <div><i class="fab fa-apple"></i><span>iOS</span></div>
-                    <div><i class="fas fa-fire"></i><span>Firebase</span></div>
-                    <div><i class="fab fa-git-alt"></i><span>Git</span></div>
-                    <div><i class="fas fa-fire"></i><span>Firebase</span></div>
-                    <div><i class="fab fa-git-alt"></i><span>Git</span></div>
-                    <div><i class="fab fa-docker"></i><span>Docker</span></div>
-                    <div><i class="fas fa-database"></i><span>SQLite</span></div>
-                    <div><i class="fab fa-cloudversify"></i><span>Supabase</span></div>
-                    <div><i class="fa-solid fa-dollar-sign"></i><span>Purchases</span></div>
+                    <div>
+                        <img src="assets/flutter-logo.png" alt="Flutter" style="width: 35px; height: 40px;">
+                        <span>Flutter</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-android"></i>
+                        <span>Android</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-apple"></i>
+                        <span>iOS</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-fire"></i>
+                        <span>Firebase</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-database"></i>
+                        <span>SQLite</span>
+                    </div>
+                    <div>
+                        <i class="fab fa-cloudversify"></i>
+                        <span>Supabase</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <span>Purchases</span>
+                    </div>
                 </div>
             </div>
+        </div>
     </section>
 
+    <!-- Work Experience Section -->
     <section id="experience" class="experience-section">
         <h2>Work Experience</h2>
         <div class="timeline">
-            <!-- Experience 1 -->
+            <!-- Experience Item 1 -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Senior Software Engineer</h3>
                     <h4>Nextbridge</h4>
                     <p class="date">Dec 2023 – Present | Lahore, Pakistan</p>
-
                     <p>
                         At Nextbridge, I work closely with clients to architect and develop scalable cross-platform
                         applications tailored to business needs. I focus on implementing robust analytics,
                         experimentation workflows, and automation pipelines to ensure data-driven product decisions and
-                        faster release cycles. Additionally, set up intercom support channel and help center to provide
-                        quick self-service solutions to users.
+                        faster release cycles.
                     </p>
                     <ul>
-                        <li>Integrated <strong>Amplitude</strong> event-based analytics to enable deep behavioral
-                            tracking and insights.
+                        <li>Integrated <strong>Amplitude</strong> event-based analytics for deep behavioral tracking.
                         </li>
-                        <li>Implemented Amplitude Experiment Evaluation API to support <strong>A/B testing</strong> and
-                            optimize user
-                            flows.</li>
-                        <li>Automated build and deployment pipelines using <strong>Fastlane</strong>, improving app
-                            release efficiency
-                            and consistency.</li>
-                        <li>Integrate <strong>Intercom</strong> support channel and Help center set up, offering users
-                            quick self-service solutions and reducing the need for direct support inquiries.
-                        </li>
+                        <li>Implemented Amplitude Experiment Evaluation API for <strong>A/B testing</strong>.</li>
+                        <li>Automated build and deployment pipelines using <strong>Fastlane</strong>.</li>
+                        <li>Integrated <strong>Intercom</strong> support channel and Help center setup.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Experience 2 -->
+            <!-- Experience Item 2 -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Senior Software Engineer</h3>
                     <h4>RootPointers</h4>
                     <p class="date">Feb 2021 – Nov 2023 | Lahore, Pakistan</p>
                     <p>
-                        At RootPointers, Developing and maintaining high-performance Flutter
-                        applications. I contributed across the full development lifecycle, including authentication,
-                        chat systems, real-time features, and integration with payment services.
+                        At RootPointers, I developed and maintained high-performance Flutter applications, contributing
+                        across the full development lifecycle, including authentication, chat systems, and payment
+                        services.
                     </p>
                     <ul>
-                        <li>Integrated <strong>Firebase</strong> Authentication and Firestore to support secure sign-ins
-                            and real-time
-                            group/single chat features.</li>
-                        <li>Implemented audio/video calling features using <strong>Agora</strong> to enhance user
-                            communication within the app.</li>
-                        <li>Utilized advanced state management (e.g., Provider, Getx etc.) and integrated payment
-                            gateways with secure API handling.</li>
+                        <li>Integrated <strong>Firebase</strong> Authentication and Firestore for real-time chat
+                            features.</li>
+                        <li>Implemented audio/video calling using <strong>Agora</strong>.</li>
+                        <li>Utilized advanced state management and integrated payment gateways.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Experience 3 -->
+            <!-- Experience Item 3 -->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Flutter Developer</h3>
@@ -156,20 +182,18 @@
                     <p class="date">Sep 2020 – Feb 2021 | Lahore, Pakistan</p>
                     <p>
                         At SJ Solutionz, I translated UI/UX designs into responsive Flutter applications, ensuring
-                        functional and appealing user interfaces. I collaborated with backend developers to integrate
-                        RESTful APIs and deliver end-to-end mobile solutions.
+                        functional and appealing user interfaces.
                     </p>
                     <ul>
-                        <li>Converted complex Figma and Adobe XD designs into fully functional Flutter UI components.
-                        </li>
-                        <li>Connected mobile apps to backend services through REST API integrations for real-world use
-                            cases.</li>
+                        <li>Converted complex Figma and Adobe XD designs into Flutter UI components.</li>
+                        <li>Connected mobile apps to backend services through REST API integrations.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2>Featured Projects</h2>
         <div class="project-controls">
@@ -177,6 +201,7 @@
             <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="project-slider">
+            <!-- Project 1 -->
             <div class="project-slide">
                 <div class="project-card">
                     <div class="project-image">
@@ -198,6 +223,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Project 2 -->
             <div class="project-slide">
                 <div class="project-card">
                     <div class="project-image">
@@ -219,6 +246,9 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Additional Projects -->
+            <!-- Project 3 -->
             <div class="project-slide">
                 <div class="project-card">
                     <div class="project-image">
@@ -240,6 +270,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Project 4 -->
             <div class="project-slide">
                 <div class="project-card">
                     <div class="project-image">
@@ -261,80 +293,53 @@
                     </div>
                 </div>
             </div>
-            <div class="project-slide"> <!-- New project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1583300940545-6d9fcaf0b2d1?auto=format&fit=crop&q=80&w=600"
-                            alt="Travel App">
-                    </div>
-                    <div class="project-content">
-                        <h3>Travel Planner App</h3>
-                        <p>Plan your trips with ease using this intuitive travel application.</p>
-                        <div class="tech-stack">
-                            <span>Flutter</span>
-                            <span>Firebase</span>
-                            <span>APIs</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="store-link"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="#" class="store-link"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="project-slide"> <!-- New project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1591002051319-e1d8f78caba0?auto=format&fit=crop&q=80&w=600"
-                            alt="Recipe App">
-                    </div>
-                    <div class="project-content">
-                        <h3>Recipe Sharing App</h3>
-                        <p>Share and discover amazing recipes from around the world.</p>
-                        <div class="tech-stack">
-                            <span>Flutter</span>
-                            <span>Firebase</span>
-                            <span>REST APIs</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="store-link"><i class="fab fa-google-play"></i> Google Play</a>
-                            <a href="#" class="store-link"><i class="fab fa-app-store-ios"></i> App Store</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more projects as needed -->
         </div>
     </section>
 
-    
+    <!-- Services Section -->
     <section id="services" class="services">
         <h2>Services</h2>
         <div class="services-grid">
+            <!-- Service 1 -->
             <div class="service-card">
                 <div class="service-image"></div>
                 <h3>Mobile App Development</h3>
-                <p>Specialized in creating high-performance and visually stunning mobile apps using Flutter. From idea to deployment, I ensure your app stands out in the app stores with smooth performance and exceptional user experience</p>
+                <p>
+                    Specialized in creating high-performance and visually stunning mobile apps using Flutter. From idea
+                    to deployment, I ensure your app stands out in the app stores with smooth performance and
+                    exceptional user experience.
+                </p>
                 <div class="tech-list">
                     <span><i class="fab fa-flutter"></i> Flutter</span>
                     <span><i class="fab fa-android"></i> Android</span>
                     <span><i class="fab fa-apple"></i> iOS</span>
                 </div>
             </div>
+
+            <!-- Service 2 -->
             <div class="service-card">
                 <div class="service-image"></div>
                 <h3>Web App Development</h3>
-                  <p>Leveraging Flutter's ability to build cross-platform solutions, I develop responsive and high-quality web apps that work seamlessly on any device. My goal is to create apps that are reliable, secure, and scalable for the web.</p>
+                <p>
+                    Leveraging Flutter's ability to build cross-platform solutions, I develop responsive and
+                    high-quality web apps that work seamlessly on any device. My goal is to create apps that are
+                    reliable, secure, and scalable for the web.
+                </p>
                 <div class="tech-list">
                     <span><i class="fab fa-react"></i> React</span>
                     <span><i class="fab fa-js"></i> JavaScript</span>
                     <span><i class="fab fa-html5"></i> HTML/CSS</span>
                 </div>
             </div>
+
+            <!-- Service 3 -->
             <div class="service-card">
                 <div class="service-image"></div>
                 <h3>Desktop App Development</h3>
-                  <p>From macOS to Windows and Linux, I craft cross-platform desktop applications that deliver powerful functionality while maintaining top-tier performance and a great user experience.</p>
+                <p>
+                    From macOS to Windows and Linux, I craft cross-platform desktop applications that deliver powerful
+                    functionality while maintaining top-tier performance and a great user experience.
+                </p>
                 <div class="tech-list">
                     <span><i class="fab fa-windows"></i> Windows</span>
                     <span><i class="fab fa-apple"></i> macOS</span>
@@ -344,30 +349,43 @@
         </div>
     </section>
 
-
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
         <div class="contact-content">
             <div class="contact-info">
                 <div class="contact-details">
-                    <a href="mailto:dr.usman7860@gmail.com"><i class="fas fa-envelope"></i> dr.usman7860@gmail.com</a>
-                    <a href="tel:+923069125501"><i class="fas fa-phone"></i> +92 (306) 9125501</a>
-                    <a href="#"><i class="fas fa-map-marker-alt"></i> Lahore, Punjab, Pakistan</a>
+                    <a href="mailto:dr.usman7860@gmail.com">
+                        <i class="fas fa-envelope"></i> dr.usman7860@gmail.com
+                    </a>
+                    <a href="tel:+923069125501">
+                        <i class="fas fa-phone"></i> +92 (306) 9125501
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-map-marker-alt"></i> Lahore, Punjab, Pakistan
+                    </a>
                 </div>
                 <div class="contact-links">
-                    <a href="https://github.com/Dr-Usman"><i class="fab fa-github"></i> Dr-Usman</a>
-                    <a href="https://www.linkedin.com/in/Dr-Usman-Geek"><i class="fab fa-linkedin"></i>
-                        Dr-Usman-Geek</a>
-                    <a href="https://twitter.com/yourusername"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://github.com/Dr-Usman">
+                        <i class="fab fa-github"></i> Dr-Usman
+                    </a>
+                    <a href="https://www.linkedin.com/in/Dr-Usman-Geek">
+                        <i class="fab fa-linkedin"></i> Dr-Usman-Geek
+                    </a>
+                    <a href="https://twitter.com/yourusername">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Usman Shahbaz. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Interactive Elements -->
     <script src="script.js"></script>
 </body>
 
