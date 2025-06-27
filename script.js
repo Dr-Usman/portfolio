@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Particle animation for hero section
+    createParticleAnimation();
+    
+    // Enhanced scroll animations
+    initScrollAnimations();
+    
     // Typing animation
     const titles = ['Senior Flutter Developer', 'Senior Software Engineer', 'Mobile App Architect', 'Cross-Platform Expert', 'UI/UX Specialist'];
     let titleIndex = 0;
@@ -35,16 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-            navLinks.classList.remove('active');
-        }
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    }
 
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -62,12 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Project slider
-    const slider = document.querySelector('.project-slider');
     const slides = document.querySelectorAll('.project-slide');
     const prevBtn = document.querySelector('.prev-arrow');
     const nextBtn = document.querySelector('.next-arrow');
     let currentSlide = 0;
-    let slidesToShow = window.innerWidth <= 768 ? 1 : 2; // Show 1 in mobile, 2 in desktop
+    let slidesToShow = window.innerWidth <= 768 ? 1 : 2;
     let autoScrollInterval;
 
     function updateSlidesToShow() {
@@ -75,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateSlider() {
-
         // Hide all slides initially
         slides.forEach(slide => slide.style.display = 'none');
 
@@ -85,20 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = currentSlide; i < currentSlide + slidesToShow && i < slides.length; i++) {
             slides[i].style.display = 'block';
         }
-
-
-        // // Calculate the range of slides to show
-        // const startIndex = currentSlide * slidesToShow;
-        // const endIndex = Math.min(startIndex + slidesToShow, slides.length);
-
-        // // Show only the slides in the current range
-        // for (let i = startIndex; i < endIndex; i++) {
-        //     slides[i].style.display = 'block';
-        // }
-
-        // // Adjust the slider transform for smooth sliding
-        // const offset = -(currentSlide * (100 / slidesToShow));
-        // slider.style.transform = `translateX(${offset}%)`;
     }
 
     function nextSlide() {
@@ -123,11 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resetAutoScroll();
     }
 
-    if (prevBtn && nextBtn) {
+    if (prevBtn && nextBtn && slides.length > 0) {
         prevBtn.addEventListener('click', prevSlide);
         nextBtn.addEventListener('click', nextSlide);
-    } else {
-        console.error("Slider buttons not found in the DOM.");
+        
+        // Initialize slider and auto-scroll
+        updateSlider();
+        startAutoScroll();
     }
 
     function startAutoScroll() {
@@ -142,38 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update slidesToShow on window resize
     window.addEventListener('resize', () => {
         updateSlidesToShow();
-        updateSlider();
-    });
-
-    // Initialize slider and auto-scroll
-    updateSlider();
-    startAutoScroll();
-
-    // Project image slider
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        const images = card.querySelectorAll('.project-images img');
-        const prevBtn = card.querySelector('.img-prev');
-        const nextBtn = card.querySelector('.img-next');
-        let currentImg = 0;
-
-        function updateImages() {
-            images.forEach(img => img.classList.remove('active'));
-            images[currentImg].classList.add('active');
+        if (slides.length > 0) {
+            updateSlider();
         }
-
-        prevBtn.addEventListener('click', () => {
-            currentImg = (currentImg - 1 + images.length) % images.length;
-            updateImages();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentImg = (currentImg + 1) % images.length;
-            updateImages();
-        });
-
-        // Initialize images
-        updateImages();
     });
 
     // Scroll reveal animations
@@ -194,4 +162,123 @@ document.addEventListener('DOMContentLoaded', () => {
         element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(element);
     });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.05)';
+            header.style.backdropFilter = 'blur(30px)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.1)';
+            header.style.backdropFilter = 'blur(20px)';
+        }
+    });
 });
+
+// Particle animation function
+function createParticleAnimation() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'particles';
+    particleContainer.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+    `;
+    
+    hero.appendChild(particleContainer);
+    
+    // Create particles
+    for (let i = 0; i < 100; i++) {
+        createParticle(particleContainer);
+    }
+}
+
+function createParticle(container) {
+    const particle = document.createElement('div');
+    const size = Math.random() * 3 + 1;
+    const duration = Math.random() * 20 + 10;
+    const delay = Math.random() * 20;
+    
+    particle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: rgba(255, 255, 255, ${Math.random() * 0.4 + 0.8});
+        border-radius: 50%;
+        left: ${Math.random() * 100}%;
+        top: 100%;
+        animation: floatUp ${duration}s linear ${delay}s infinite;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    `;
+    
+    container.appendChild(particle);
+}
+
+// Enhanced scroll animations
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.tech-icons div, .project-card, .service-card, .timeline-item');
+    
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }, index * 100);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px) scale(0.9)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        animateOnScroll.observe(element);
+    });
+}
+
+// Add CSS for particle animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+    
+    .tech-icons div {
+        animation: pulse 4s ease-in-out infinite;
+    }
+    
+    .tech-icons div:nth-child(even) {
+        animation-delay: 1s;
+    }
+    
+    .tech-icons div:nth-child(3n) {
+        animation-delay: 2s;
+    }
+`;
+document.head.appendChild(style);
