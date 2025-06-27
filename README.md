@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website showcasing my expertise as a Senior Flutter Developer with over 5 years of experience in cross-platform mobile development.
 
+## 🌟 Live Demo
+
+**[View Live Portfolio →](https://usmanshahbaz.com)**
+
 ## ✨ Features
 
 - **Modern Glass-morphism Design** - Contemporary UI with glassmorphic effects and backdrop blur
@@ -80,10 +84,6 @@ portfolio/
 - **Projects** - Showcase of featured applications
 - **Services** - Development services offered
 - **Contact** - Professional contact information
-
-## 🌟 Live Demo
-
-Visit the live portfolio: [Coming Soon]
 
 ## 📧 Contact
 
