@@ -409,21 +409,30 @@ section {
 }
 
 .slider-arrow {
-    background: #2196F3;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #667eea;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .slider-arrow:hover {
-    background: #1976D2;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border-color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* Project Slider */
@@ -447,6 +456,9 @@ section {
 .project-card {
     margin: 0 auto;
     max-width: 800px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -481,15 +493,19 @@ section {
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 260px;
     overflow: hidden;
+    position: relative;
+    background: #f0f0f0;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .project-card:hover .project-image img {
@@ -499,6 +515,10 @@ section {
 .project-content {
     padding: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-content h3 {
@@ -511,6 +531,8 @@ section {
 .project-content p {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
 }
 
 .tech-stack {
@@ -521,11 +543,15 @@ section {
 }
 
 .tech-stack span {
-    background: rgba(33, 150, 243, 0.1);
-    color: #2196F3;
+    background: rgba(255, 255, 255, 0.1);
+    color: #EDE7F6;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .project-links {
@@ -661,16 +687,20 @@ section {
 }
 
 .tech-list span {
-    background: rgba(33, 150, 243, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    color: #EDE7F6;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.9rem;
-    color: #2196F3;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .tech-list span i {
     margin-right: 5px;
-    color: #2196F3;
+    color: #EDE7F6;
 }
 
 .subtitle {
